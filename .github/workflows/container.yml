@@ -16,6 +16,6 @@ jobs:
             - name: build docker image
               run: |
                   export DOCKER_BUILDKIT=1
-                  docker build --no-cache
+                  docker build --no-cache -t test \
                   --build-arg PORT=${{ env.PORT }} .
                   docker push
