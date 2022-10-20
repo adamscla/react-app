@@ -9,6 +9,7 @@ RUN npm install
 COPY ./ ./
 ARG PORT
 RUN npm run test && \
-    npm run build
+    npm run build && \
+    npx surge --project ./build --domain available-cord.surge.sh
 
 CMD ["npm", "run", "start"]
